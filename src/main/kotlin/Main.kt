@@ -9,50 +9,33 @@ fun main() {
         215.0, 250.5,
         180.5, 240.0
     )
+    selectCity(pizzaMoscow,pizzaPeter)
 
 }
 
-fun selectCity(pizzaPeter: PizzaPeter, pizzaMoscow: PizzaMoscow)
-{
+fun selectCity(pizzaMoscow: PizzaMoscow, pizzaPeter: PizzaPeter ) {
     val currentPizzaCity: PizzaCity
     println("Добрый день! Выберите город")
     println("1.Москва\n2.Санкт-Петербург")
-    val city = readln()
+
+    currentPizzaCity = when (readln()) {
+        "1" -> pizzaMoscow
+        "2" -> pizzaPeter
+        else -> {
+            println("ERROR")
+            exitProcess(1)
+        }
+    }
     println("Выберите пиццу:")
-    println("1. Неаполитанская пицца\n2. Римская пицца\n3. Сицилийская пицца\n4. Тирольская пицца")
-    val pizza = readln()
-    if (city == "1") {
-        currentPizzaCity = pizzaMoscow
-        if (pizza == "1")
-            pizzaMoscow.neapolitanPizzaSale()
-        else if (pizza == "2")
-            pizzaMoscow.romanPizzaSale()
-        else if (pizza == "3")
-            pizzaMoscow.sicilianPizzaSale()
-        else if (pizza == "4")
-            pizzaMoscow.tyroleanPizzaSale()
-        else{
+    println ("1. Неаполитанская пицца\n2. Римская пицца\n3. Сицилийская пицца\n4. Тирольская пицца")
+    when(readln()){
+        "1" -> currentPizzaCity.neapolitanPizzaSale()
+        "2" -> currentPizzaCity.romanPizzaSale()
+        "3" -> currentPizzaCity.sicilianPizzaSale()
+        "4" -> currentPizzaCity.tyroleanPizzaSale()
+        else -> {
             println("ERROR")
             exitProcess(1)
         }
-    }
-    else if (city == "2") {
-        currentPizzaCity = pizzaPeter
-        if (pizza == "1")
-            pizzaPeter.neapolitanPizzaSale()
-        else if (pizza == "2")
-            pizzaPeter.romanPizzaSale()
-        else if (pizza == "3")
-            pizzaPeter.sicilianPizzaSale()
-        else if (pizza == "4")
-            pizzaPeter.tyroleanPizzaSale()
-        else{
-            println("ERROR")
-            exitProcess(1)
-        }
-    }
-    else {
-        println("ERROR")
-        exitProcess(1)
     }
 }
