@@ -3,9 +3,10 @@ class PizzaPeter(
     neapolitanPizzaPrice: Double,  romanPizzaPrice: Double,
      sicilianPizzaPrice:Double,  tyroleanPizzaPrice:Double
 ) : PizzaCity(neapolitanPizzaPrice, romanPizzaPrice,
-      sicilianPizzaPrice, tyroleanPizzaPrice)
+      sicilianPizzaPrice, tyroleanPizzaPrice), Drink
 
 {
+
     override fun neapolitanPizzaSale() {
        neapolitanPizzaCount++
        println("Спасибо за покупку неаполитанской пиццы в Санкт-Петербурге")
@@ -24,6 +25,12 @@ class PizzaPeter(
     override fun tyroleanPizzaSale() {
         tyroleanPizzaCount++
         println("Спасибо за покупку тирольской пиццы в Санкт-Петербурге")
+    }
+
+    override fun drinkSale() {
+        println("Желаете кофе?")
+        println("1. Да \n2. Нет")
+        if (readln() == "1") println("С вас 200 рублев")
     }
 
 }

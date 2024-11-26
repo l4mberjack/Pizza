@@ -9,33 +9,42 @@ fun main() {
         215.0, 250.5,
         180.5, 240.0
     )
-    selectCity(pizzaMoscow,pizzaPeter)
+//    while(true) {
+//        selectCity(pizzaMoscow, pizzaPeter)
+//        var currentPizzaCity: PizzaCity
+//        when (currentPizzaCity) {
+//            is CheckPhoto -> pizzaMoscow.showCheckPhoto()
+//            else -> pizzaPeter.drinkSale()
+//        }
+//    } добавить в функцию
 
 }
 
 fun selectCity(pizzaMoscow: PizzaMoscow, pizzaPeter: PizzaPeter ) {
-    val currentPizzaCity: PizzaCity
+    var currentPizzaCity: PizzaCity
     println("Добрый день! Выберите город")
     println("1.Москва\n2.Санкт-Петербург")
-
-    currentPizzaCity = when (readln()) {
-        "1" -> pizzaMoscow
-        "2" -> pizzaPeter
-        else -> {
-            println("ERROR")
-            exitProcess(1)
+    while (true) {
+        currentPizzaCity = when (readln()) {
+            "1" -> pizzaMoscow
+            "2" -> pizzaPeter
+            "0" -> break
+            else -> {
+                println("ERROR")
+                exitProcess(1)
+            }
         }
-    }
-    println("Выберите пиццу:")
-    println ("1. Неаполитанская пицца\n2. Римская пицца\n3. Сицилийская пицца\n4. Тирольская пицца")
-    when(readln()){
-        "1" -> currentPizzaCity.neapolitanPizzaSale()
-        "2" -> currentPizzaCity.romanPizzaSale()
-        "3" -> currentPizzaCity.sicilianPizzaSale()
-        "4" -> currentPizzaCity.tyroleanPizzaSale()
-        else -> {
-            println("ERROR")
-            exitProcess(1)
+        println("Выберите пиццу:")
+        println("1. Неаполитанская пицца\n2. Римская пицца\n3. Сицилийская пицца\n4. Тирольская пицца")
+        when (readln()) {
+            "1" -> currentPizzaCity.neapolitanPizzaSale()
+            "2" -> currentPizzaCity.romanPizzaSale()
+            "3" -> currentPizzaCity.sicilianPizzaSale()
+            "4" -> currentPizzaCity.tyroleanPizzaSale()
+            else -> {
+                println("ERROR")
+                exitProcess(1)
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ class PizzaMoscow(
         neapolitanPizzaPrice: Double,  romanPizzaPrice: Double,
         sicilianPizzaPrice:Double,  tyroleanPizzaPrice:Double
     ) : PizzaCity(neapolitanPizzaPrice, romanPizzaPrice,
-        sicilianPizzaPrice, tyroleanPizzaPrice)
+        sicilianPizzaPrice, tyroleanPizzaPrice), CheckPhoto
 
     {
         override fun neapolitanPizzaSale() {
@@ -24,6 +24,11 @@ class PizzaMoscow(
         override fun tyroleanPizzaSale() {
             tyroleanPizzaCount++
             println("Спасибо за покупку тирольской пиццы в Москве")
+        }
+
+        override fun showCheckPhoto() {
+            println("У вас есть фотография чека?")
+            println("1. Да \n2. Нет")
         }
 
     }
