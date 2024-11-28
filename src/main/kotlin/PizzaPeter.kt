@@ -30,7 +30,7 @@ class PizzaPeter(
     override fun drinkSale() {
         println("Желаете кофе?")
         println("1. Да \n2. Нет")
-        if (readln() == "1") println("С вас 200 рублев")
+        if (readln() == "1") {println("С вас 200 рублев");}
     }
 
 }
