@@ -20,6 +20,7 @@ fun main() {
 ///Функция для выбора города и пиццы
 ///</summary>
 fun selectCity(pizzaMoscow: PizzaMoscow, pizzaPeter: PizzaPeter ) {
+
     var currentPizzaCity: PizzaCity
     while (true) {
         println("Добрый день! Выберите город")

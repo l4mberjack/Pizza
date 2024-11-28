@@ -7,6 +7,7 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
     var tyroleanPizzaCount = 0
 
     var cheque = 0
+    var coffe = 0
 
     abstract fun neapolitanPizzaSale()
 
@@ -16,7 +17,7 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
 
     abstract fun tyroleanPizzaSale()
 
-    fun showStatistics(){
+    open fun showStatistics(){
         println("Продано сицилийской пиццы: $sicilianPizzaCount")
         println("Продано сицилийской пиццы: ${neapolitanPizzaCount}")
         println("Продано сицилийской пиццы: $romanPizzaCount")
@@ -27,6 +28,7 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
                 sicilianPizzaCount * sicilianPizzaPrice + tyroleanPizzaCount * tyroleanPizzaPrice
 
         println("Выручка: $money")
+        println("Выручка с учетом скидок и проданных кофе: ${(money - cheque * 50) + coffe * 200}")
     }
 
 }

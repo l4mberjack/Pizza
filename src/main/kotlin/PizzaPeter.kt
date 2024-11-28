@@ -6,7 +6,7 @@ class PizzaPeter(
       sicilianPizzaPrice, tyroleanPizzaPrice), Drink
 
 {
-
+    var deniedCoffe = 0
     override fun neapolitanPizzaSale() {
        neapolitanPizzaCount++
        println("Спасибо за покупку неаполитанской пиццы в Санкт-Петербурге")
@@ -30,7 +30,15 @@ class PizzaPeter(
     override fun drinkSale() {
         println("Желаете кофе?")
         println("1. Да \n2. Нет")
-        if (readln() == "1") {println("С вас 200 рублев");}
+        if (readln() == "1") {println("С вас 200 рублев");coffe++}
+        else deniedCoffe++
+    }
+
+    override fun showStatistics() {
+        super.showStatistics()
+        println("Общее кол-во проданного кофе: ${coffe}; Общая сумма скидок: ${coffe * 200}")
+        println("Процент людей купивших кофе: ${(coffe*100) / (coffe+deniedCoffe %.3f)}")
+        println("Процент людей отказавшихся от кофе: ${100 -(coffe*100) / (coffe+deniedCoffe %.3f)}")
     }
 
 }
