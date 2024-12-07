@@ -6,7 +6,7 @@ class PizzaMoscow(
         sicilianPizzaPrice, tyroleanPizzaPrice), CheckPhoto
 
     {
-        val seenCheques = cheque
+
         var notSeenCheques = 0.0
         override fun neapolitanPizzaSale() {
             neapolitanPizzaCount++

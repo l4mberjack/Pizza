@@ -5,7 +5,6 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
     var romanPizzaCount = 0
     var sicilianPizzaCount = 0
     var tyroleanPizzaCount = 0
-
     var cheque = 0
     var coffe = 0
 
@@ -24,11 +23,13 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
         println("Продано сицилийской пиццы: $tyroleanPizzaCount")
 
 
+
         val money = neapolitanPizzaCount * neapolitanPizzaPrice + romanPizzaCount * romanPizzaPrice +
                 sicilianPizzaCount * sicilianPizzaPrice + tyroleanPizzaCount * tyroleanPizzaPrice
 
         println("Выручка: $money")
         println("Выручка с учетом скидок и проданных кофе: ${(money - cheque * 50) + coffe * 200}")
+
     }
 
 }
