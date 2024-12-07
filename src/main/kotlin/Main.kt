@@ -11,24 +11,27 @@ fun main() {
         215.0, 250.5,
         180.5, 240.0
     )
+    val pizzaOmsk = PizzaOmsk(150.0, 170.5,
+        145.0, 160.0)
 
-    selectCity(pizzaMoscow, pizzaPeter)
+    selectCity(pizzaMoscow, pizzaPeter, pizzaOmsk)
 
 }
 
 ///<summary>
 ///Функция для выбора города и пиццы
 ///</summary>
-fun selectCity(pizzaMoscow: PizzaMoscow, pizzaPeter: PizzaPeter ) {
+fun selectCity(pizzaMoscow: PizzaMoscow, pizzaPeter: PizzaPeter, pizzaOmsk: PizzaOmsk ) {
 
     var currentPizzaCity: PizzaCity
     while (true) {
         println("Добрый день! Выберите город")
-        println("1.Москва\n2.Санкт-Петербург\n0.Выход из программы")
+        println("1.Москва\n2.Санкт-Петербург\n3.Омск\n0.Выход из программы")
 
         currentPizzaCity = when (readln()) {
             "1" -> pizzaMoscow
             "2" -> pizzaPeter
+            "3" -> pizzaOmsk
             "0" -> break
             else -> {
                 println("ERROR")
@@ -69,7 +72,8 @@ private fun selectPizza(currentPizzaCity: PizzaCity) {
 
 fun selectAddService(currentPizzaCity: PizzaCity){
     when(currentPizzaCity){
-        is CheckPhoto -> currentPizzaCity.showCheckPhoto()
-        is Drink -> currentPizzaCity.drinkSale()
+        is PizzaOmsk ->  {currentPizzaCity.showCheckPhoto();currentPizzaCity.drinkSale(); currentPizzaCity.SauceSale()}
+        is PizzaPeter -> currentPizzaCity.drinkSale()
+        is  PizzaMoscow -> currentPizzaCity.showCheckPhoto()
     }
 }

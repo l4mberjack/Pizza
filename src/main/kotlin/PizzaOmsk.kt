@@ -2,16 +2,15 @@ class PizzaOmsk(
     neapolitanPizzaPrice: Double,  romanPizzaPrice: Double,
     sicilianPizzaPrice:Double,  tyroleanPizzaPrice:Double
 ) : PizzaCity(neapolitanPizzaPrice, romanPizzaPrice,
-    sicilianPizzaPrice, tyroleanPizzaPrice), Drink, CheckPhoto, Sauce{
+    sicilianPizzaPrice, tyroleanPizzaPrice), Drink, CheckPhoto, Sauce
+{
 
     override var sauce = 0
     override var deniedCoffe = 0
     var deniedSauce = 0
     var notSeenCheques = 0.0
     var CheeseSause = 0
-    var ThousandIsland = 0
     var OmskiySause = 0
-    var GarlicSauce = 0
     override fun neapolitanPizzaSale() {
         neapolitanPizzaCount++
         println("Спасибо за покупку неаполитанской пиццы в Омске")
@@ -47,12 +46,10 @@ class PizzaOmsk(
         println("Желаете соус к пицце?")
         println("1. Да \n2. Нет")
         if(readln() == "1"){
-            println("1. Сырный\n2. Омский\n3. Чесночный\n4. Тысяча островов")}
+            println("1. Сырный\n2. Омский")}
         when(readln()){
             "1" -> CheeseSause++
             "2" -> OmskiySause++
-            "3" -> GarlicSauce++
-            "4" -> ThousandIsland++
         }
 
 

@@ -18,9 +18,9 @@ abstract class PizzaCity(val neapolitanPizzaPrice: Double, val romanPizzaPrice: 
 
     open fun showStatistics(){
         println("Продано сицилийской пиццы: $sicilianPizzaCount")
-        println("Продано сицилийской пиццы: ${neapolitanPizzaCount}")
-        println("Продано сицилийской пиццы: $romanPizzaCount")
-        println("Продано сицилийской пиццы: $tyroleanPizzaCount")
+        println("Продано неаполитанской пиццы: $neapolitanPizzaCount")
+        println("Продано римской пиццы: $romanPizzaCount")
+        println("Продано тирольской пиццы: $tyroleanPizzaCount")
 
 
 
